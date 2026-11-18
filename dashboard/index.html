@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Token Launch Radar</h1>
+    <p class="sub">Which protocols without a token would be worth the most if they launched one — and how to farm each of them.</p>
+  </div>
+  <div class="meta" id="meta">Loading…</div>
+</header>
+
+<section class="controls">
+  <input id="q" type="search" placeholder="Search name or slug…" aria-label="Search protocols">
+  <select id="cat" aria-label="Filter by category"><option value="">All categories</option></select>
+  <label class="chk"><input id="watch" type="checkbox"> Watchlist only</label>
+  <label class="sort">Sort
+    <select id="sort">
+      <option value="value">Implied value</option>
+      <option value="tvl">TVL</option>
+      <option value="growth">7d growth</option>
+      <option value="age">Oldest first</option>
+      <option value="name">Name A–Z</option>
+    </select>
+  </label>
+</section>
+
+<main>
+  <section class="board-wrap">
+    <table id="board">
+      <thead><tr>
+        <th>#</th><th>Protocol</th><th>Category</th><th>Chains</th>
+        <th class="num">TVL</th><th class="num">7d</th><th class="num">Implied value</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="count" id="count"></p>
+  </section>
+  <aside class="detail" id="detail" aria-live="polite">
+    <p class="hint">Click a row to see its detail, model breakdown and farm plan.</p>
+  </aside>
+</main>
+
+<footer>
+  <h2>How the value is built</h2>
+  <p id="method"></p>
+  <p class="fine">Implied value is this entry's own claim from the snapshot's figures — it is not a prediction that a token will be issued, or when. Snapshot as of <span id="asof"></span>, DefiLlama data. “Records no token” means the snapshot records none; a protocol on the list may still have one its record does not carry.</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
